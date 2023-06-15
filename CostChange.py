@@ -108,3 +108,70 @@ plt.show()
 
 
 # %%
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df = pd.read_csv('/Users/nusratprithee/Documents/Rising-Eagle-company-work/Purchase-History-with-Average-Unit-Price-2020-vs.-2021.csv')
+
+
+
+# 2. Data Preprocessing
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# 3. Calculate Percentage Change
+df['Percentage Change'] = ((df['Qty Sold 01/01/21 to 12/31/21'] - df['Qty Sold 01/01/20 to 12/31/20']) / df['Qty Sold 01/01/20 to 12/31/20']) * 100
+
+# 4. Bar Chart of Percentage Change
+plt.figure(figsize=(12, 6))
+plt.bar(df['Item #'], df['Percentage Change'])
+plt.xlabel('Item #')
+plt.ylabel('Percentage Change')
+plt.title('Percentage Change of Quantity Sold')
+plt.xticks(rotation=90)
+plt.show()
+
+# 5. Heatmap of Percentage Change
+pivot_table = df.pivot_table(values='Percentage Change', index='Item #', columns='Description')
+plt.figure(figsize=(10, 6))
+plt.imshow(pivot_table, cmap='RdYlGn', interpolation='nearest', aspect='auto')
+plt.colorbar(label='Percentage Change')
+plt.xticks(range(len(pivot_table.columns)), pivot_table.columns, rotation=90)
+plt.yticks(range(len(pivot_table.index)), pivot_table.index)
+plt.title('Heatmap of Percentage Change')
+plt.xlabel('Description')
+plt.ylabel('Item #')
+plt.tight_layout()
+plt.show()
+
+# 6. Percentage Change Bar Chart for Each Item
+plt.figure(figsize=(12, 6))
+for index, row in df.iterrows():
+    plt.bar(row['Description'], row['Percentage Change'], label=row['Item #'])
+plt.xlabel('Description')
+plt.ylabel('Percentage Change')
+plt.title('Percentage Change of Quantity Sold for Each Item')
+plt.xticks(rotation=90)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# 7. GPCA Table
+gpca_table = df.groupby(['Item #', 'Description'])['Qty Sold 01/01/21 to 12/31/21', 'Qty Sold 01/01/20 to 12/31/20'].sum().reset_index()
+
+# 8. Line Plot of Quantity Sold
+plt.figure(figsize=(12, 6))
+plt.plot(df['Item #'], df['Qty Sold 01/01/21 to 12/31/21'], marker='o', label='Qty Sold 2021')
+plt.plot(df['Item #'], df['Qty Sold 01/01/20 to 12/31/20'], marker='o', label='Qty Sold 2020')
+plt.xlabel('Item #')
+plt.ylabel('Quantity Sold')
+plt.title('Quantity Sold Comparison')
+plt.xticks(rotation=90)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+
+
+# %%
