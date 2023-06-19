@@ -46,8 +46,7 @@ for (type in unique_types) {
 # Plot of percentage change of price
 
 ```{r}
-columns_to_drop <- c("Type", "Qty Sold 01/01/21 to 12/31/21", "Sales $$ 01/01/21 to 12/31/21", "Qty Sold 01/01/20 to 12/31/20", "Sales $$ 01/01/20 to 12/31/20")
-df <- df[, !(names(df) %in% columns_to_drop)]
+
 
 # Convert the average unit price columns from strings to numeric values
 df$`Average Unit Price 01/01/21 to 12/31/21` <- as.numeric(gsub("[$,]", "", df$`Average Unit Price 01/01/21 to 12/31/21`))
@@ -66,6 +65,11 @@ ggplot(df, aes(x = `Item #`, y = `Percentage Change`)) +
   theme(plot.margin = margin(1, 1, 1, 1, "cm"))
 
 ```
+
+
+
+```
+
 
 ### Product Percentage change from 2021 to 2022
 
