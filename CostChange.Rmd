@@ -19,7 +19,7 @@ library(ezids)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Product Percentage change from 2020 to 2021
+#### Product Percentage change from 2020 to 2021
 
 
 
@@ -29,10 +29,14 @@ library(ggplot2)
 
 df <- read_csv('/Users/nusratprithee/Documents/Rising-Eagle-company-work/Purchase-History-with-Average-Unit-Price-2020-vs.-2021.csv')
 
-```
-## Product type
 
-```{r}
+
+```
+
+
+### Product type
+
+```{r echo = FALSE}
 # Get unique values from the "Type" column
 unique_types <- unique(df$Type)
 
@@ -43,9 +47,9 @@ for (type in unique_types) {
 
 ```
 
-# Plot of percentage change of price
+## Plot of percentage change of price
 
-```{r}
+```{r echo = FALSE}
 
 
 # Convert the average unit price columns from strings to numeric values
@@ -66,12 +70,39 @@ ggplot(df, aes(x = `Item #`, y = `Percentage Change`)) +
 
 ```
 
+#  Product Buy Comparison of 2020 to 2021
+
+
+
+```{r echo = FALSE}
+library(ggplot2)
+
+# Group the data by Item # and Description and sum the quantity buy for 2020-2021
+gpca_table <- aggregate(cbind(`Qty Sold 01/01/21 to 12/31/21`, `Qty Sold 01/01/20 to 12/31/20`) ~ `Item #` + `Description`, data = df, sum)
+
+# Create a line plot of quantity buy
+ggplot(gpca_table, aes(x = `Item #`, group = 1)) +
+  geom_line(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/20 to 12/31/20`, color = "Qty Sold 2020"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/20 to 12/31/20`, color = "Qty Sold 2020"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/21 to 12/31/21`, linetype = "White Year"), color = "black", size = 1, linetype = "dashed") +
+  labs(x = "Item #", y = "Quantity Buy", title = "Quantity Buy Comparison") +
+  scale_color_manual(values = c("blue", "red"), labels = c("Qty Sold 2021", "Qty Sold 2020")) +
+  scale_shape_manual(values = c(16, 16)) +
+  scale_linetype_manual(values = "dashed", labels = "White Year") +
+  guides(color = guide_legend(override.aes = list(size = 2))) +
+ 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
 
 
 ```
 
 
-### Product Percentage change from 2021 to 2022
+#### Product Percentage change from 2021 to 2022
 
 
 ```{r include=FALSE}
@@ -82,9 +113,9 @@ df <- read_csv('/Users/nusratprithee/Documents/Rising-Eagle-company-work/Purchas
 
 ```
 
-## Product type
+### Product type
 
-```{r}
+```{r echo = FALSE}
 # Get unique values from the "Type" column
 unique_types <- unique(df$Type)
 
@@ -95,10 +126,9 @@ for (type in unique_types) {
 
 ```
 
-# Plot of percentage change of price
-```{r}
-columns_to_drop <- c("Type", "Qty Sold 01/01/22 to 12/31/22", "Sales $$ 01/01/22 to 12/31/22", "Qty Sold 01/01/21 to 12/31/21", "Sales $$ 01/01/21 to 12/31/21")
-df <- df[, !(names(df) %in% columns_to_drop)]
+## Plot of percentage change of price
+```{r echo = FALSE}
+
 
 # Convert the average unit price columns from strings to numeric values
 df$`Average Unit Price 01/01/22 to 12/31/22` <- as.numeric(gsub("[$,]", "", df$`Average Unit Price 01/01/22 to 12/31/22`))
@@ -121,4 +151,82 @@ ggplot(df, aes(x = `Item #`, y = `Percentage Change`)) +
 ```
 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+#  Product Buy Comparison of 2021 to 2022
+
+
+```{r echo = FALSE}
+# Group the data by Item # and Description and sum the quantity sold for 2021-2022
+gpca_table <- aggregate(cbind(`Qty Sold 01/01/22 to 12/31/22`, `Qty Sold 01/01/21 to 12/31/21`) ~ `Item #` + `Description`, data = df, sum)
+
+# Create a line plot of quantity sold
+ggplot(gpca_table, aes(x = `Item #`, group = 1)) +
+  geom_line(aes(y = `Qty Sold 01/01/22 to 12/31/22`, color = "Qty Sold 2022"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/22 to 12/31/22`, color = "Qty Sold 2022"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/22 to 12/31/22`, linetype = "White Year"), color = "black", size = 1, linetype = "dashed") +
+  labs(x = "Item #", y = "Quantity Sold", title = "Quantity Sold Comparison") +
+  scale_color_manual(values = c("blue", "red"), labels = c("Qty Sold 2022", "Qty Sold 2021")) +
+  scale_shape_manual(values = c(16, 16)) +
+  scale_linetype_manual(values = "dashed", labels = "White Year") +
+  guides(color = guide_legend(override.aes = list(size = 2))) +
+ 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+```
+
+### Product Price Distribution Analysis
+
+#Price Distribution indicates the product price rage we use.
+
+
+### Price Distribution of 2021
+
+```{r echo = FALSE}
+
+# Create a histogram of the average unit prices
+ggplot(df, aes(x = `Average Unit Price 01/01/21 to 12/31/21`)) +
+  geom_histogram(fill = "blue", color = "black", bins = 20) +
+  labs(x = "Average Unit Price", y = "Frequency", title = "Distribution of Average Unit Prices 2021") +
+  theme_minimal()
+
+
+```
+
+## Price Distribution of 2022
+
+```{r echo = FALSE}
+library(ggplot2)
+
+
+
+ ggplot(df, aes(x = `Average Unit Price 01/01/22 to 12/31/22`)) +
+  geom_histogram(fill = "blue", color = "black", bins = 20) +
+  labs(x = "Average Unit Price", y = "Frequency", title = "Distribution of Average Unit Prices (2022)") +
+  theme_minimal()
+
+
+```
+
+# Price Distribution of 2020
+
+```{r echo = FALSE}
+library(ggplot2)
+
+df <- read_csv('/Users/nusratprithee/Documents/Rising-Eagle-company-work/Purchase-History-with-Average-Unit-Price-2020-vs.-2021.csv')
+
+df$`Average Unit Price 01/01/20 to 12/31/20` <- as.numeric(gsub("[$,]", "", df$`Average Unit Price 01/01/20 to 12/31/20`))
+
+# Create a histogram of the average unit prices
+ggplot(df, aes(x = `Average Unit Price 01/01/20 to 12/31/20`)) +
+ geom_histogram(fill = "blue", color = "black", bins = 20) +
+  labs(x = "Average Unit Price", y = "Frequency", title = "Distribution of Average Unit Prices (2020)") +
+ theme_minimal()
+
+```
+
+
+
+
