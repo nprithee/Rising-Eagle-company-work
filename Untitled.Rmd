@@ -1,0 +1,180 @@
+
+---
+title: "Product Cost Change"
+author: "Rising Eagle Construction LLC"
+date: "Au 2023"
+output:
+  html_document:
+    code_folding: hide
+    number_sections: true
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include=FALSE}
+library(ezids)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+###### Product Percentage change from 2023
+
+
+
+```{r include=FALSE}
+library(readr)
+library(ggplot2)
+
+df <- read_csv('/Users/nusratprithee/Documents/Rising-Eagle-company-work/Restoration-1-of-Springfield-Purchase-History-_Jan.-to-March-vs.-April-to-June-2023_.csv')
+
+
+
+```
+
+
+##### Product type
+
+```{r echo = FALSE}
+# Get unique values from the "Type" column
+unique_types <- unique(df$Type)
+
+# Print each unique type
+for (type in unique_types) {
+  print(paste("Product Type:", as.character(type)))
+}
+
+```
+
+#### Plot of percentage change of price
+
+```{r echo = FALSE}
+
+
+# Convert the average unit price columns from strings to numeric values
+df$`Per Unit Price Average 04/01/23 to 06/30/23` <- as.numeric(gsub("[$,]", "", df$`Per Unit Price Average 04/01/23 to 06/30/23`))
+df$`Per Unit on Average 01/01/23 to 03/31/23` <- as.numeric(gsub("[$,]", "", df$`Per Unit on Average 01/01/23 to 03/31/23`))
+
+# Calculate the percentage change
+df$`Percentage Change` <- ((df$`Per Unit Price Average 04/01/23 to 06/30/23` - df$`Per Unit on Average 01/01/23 to 03/31/23`) / df$`Per Unit on Average 01/01/23 to 03/31/23`) * 100
+
+library(plotly)
+
+# Create an interactive bar chart with labels and percentage change values
+plot_ly(df, x = ~`Item #`, y = ~`Percentage Change`, type = "bar", text = ~paste("Type: ", `Type`), hoverinfo = "text",
+        marker = list(color = "blue")) %>%
+  add_text(x = ~`Item #`, y = ~`Percentage Change`, text = ~paste(sprintf("%.1f%%", `Percentage Change`)), textposition = "outside", 
+           hoverinfo = "none", showlegend = FALSE) %>%
+  layout(xaxis = list(title = "Item #"), yaxis = list(title = "Percentage Change"),
+         title = "Percentage Change of Average Unit Price (2020 to 2021)", 
+         hoverlabel = list(bgcolor = "white", font = list(color = "black")))
+
+
+
+```
+
+### Percentage change in Each Catagory of Product 
+
+```{r echo = FALSE}
+
+
+# Calculate the overall percentage change for each type
+overall_percentage_change <- aggregate(`Percentage Change` ~ Type, data = df, FUN = function(x) sum(x, na.rm = TRUE))
+
+# Print the overall percentage change for each type
+print(overall_percentage_change)
+
+
+
+```
+
+```{r echo = FALSE}
+library(ggplot2)
+
+# Calculate the overall percentage change for each type
+overall_percentage_change <- aggregate(`Percentage Change` ~ Type, data = df, FUN = function(x) sum(x, na.rm = TRUE))
+
+# Create a bar plot of the overall percentage change with labels
+ggplot(overall_percentage_change, aes(x = reorder(Type, `Percentage Change`), y = `Percentage Change`)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  geom_text(aes(label = paste0(round(`Percentage Change`, 2), "%")), vjust = -0.5) +
+  labs(x = "Type", y = "Overall Percentage Change",
+       title = "Overall Percentage Change of Each Type") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+##  Product Buy Comparison of 2020 to 2021
+
+
+
+```{r echo = FALSE}
+
+
+library(ggplot2)
+
+# Group the data by Item #, Description, and Product Type and sum the quantity bought for 2020-2021
+gpca_table <- aggregate(cbind(`Qty Sold 04/01/23 to 06/30/23`, `Qty Sold 01/01/23 to 03/31/23`) ~ `Item #` + `Description` + `Type`, data = df, sum)
+
+# Calculate the threshold values for identifying large and medium spikes
+max_qty <- max(gpca_table$`Qty Sold 04/01/23 to 06/30/23`)
+large_threshold <- max_qty * 1.0  # Adjust the threshold as needed
+medium_threshold <- max_qty * 0.1  # Adjust the threshold as needed
+
+# Create a line plot of quantity bought
+ggplot(gpca_table, aes(x = `Item #`, group = 1)) +
+  geom_line(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/21 to 12/31/21`, color = "Qty Sold 2021"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/20 to 12/31/20`, color = "Qty Sold 2020"), size = 1) +
+  geom_point(aes(y = `Qty Sold 01/01/20 to 12/31/20`, color = "Qty Sold 2020"), size = 2) +
+  geom_line(aes(y = `Qty Sold 01/01/21 to 12/31/21`, linetype = "White Year"), color = "black", size = 1, linetype = "dashed") +
+  labs(x = "Item #", y = "Quantity Buy", title = "Quantity Buy Comparison") +
+  scale_color_manual(values = c("blue", "red"), labels = c("Qty Sold 2021", "Qty Sold 2020")) +
+  scale_shape_manual(values = c(16, 16)) +
+  scale_linetype_manual(values = "dashed", labels = "White Year") +
+  guides(color = guide_legend(override.aes = list(size = 2))) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_text(aes(label = ifelse(`Qty Sold 01/01/21 to 12/31/21` >= large_threshold | `Qty Sold 01/01/21 to 12/31/21` >= medium_threshold, as.character(`Type`), ""), y = `Qty Sold 01/01/21 to 12/31/21`), vjust = -0.5)
+
+
+
+
+```
+
+# Overall Cost change of product between 2020 to 2021
+
+```{r echo = FALSE}
+library(readr)
+
+
+
+# Convert the average unit price columns from strings to numeric values
+df$`Average Unit Price 01/01/21 to 12/31/21` <- as.numeric(gsub("[$,]", "", df$`Average Unit Price 01/01/21 to 12/31/21`))
+df$`Average Unit Price 01/01/20 to 12/31/20` <- as.numeric(gsub("[$,]", "", df$`Average Unit Price 01/01/20 to 12/31/20`))
+
+# Calculate the overall percentage change
+overall_percentage_change <- ((sum(df$`Average Unit Price 01/01/21 to 12/31/21`) - sum(df$`Average Unit Price 01/01/20 to 12/31/20`)) / sum(df$`Average Unit Price 01/01/20 to 12/31/20`)) * 100
+
+# Print the overall percentage change
+cat("Overall Percentage Change: ", overall_percentage_change, "%", "\n")
+
+
+```
+
+```{r echo = FALSE}
+
+# Create a data frame for the overall percentage change
+data <- data.frame(Year = c("2020", "2021"), Percentage_Change = c(0, overall_percentage_change))
+
+# Create a line graph
+ggplot(data, aes(x = Year, y = Percentage_Change, group = 1)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "blue", size = 3) +
+  labs(x = "Year", y = "Percentage Change", title = "Overall Percentage Change of Average Unit Price") +
+  geom_text(aes(label = paste0(Percentage_Change, "%")), vjust = -0.5, size = 4, hjust = -0.2) +
+  theme_minimal()
+
+```
