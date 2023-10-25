@@ -6,7 +6,7 @@ import seaborn as sns
 
 # Load your financial data (replace 'data.csv' with your data file)
 try:
-    df = pd.read_csv(r'C:\Users\nprit\Documents\Rising-Eagle-company-work\RisingEagle_profitloss.csv')
+    df = pd.read_csv(r'C:\Users\nprit\Documents\Rising-Eagle-company-work\RisingEagle-profitloss.csv')
 except pd.errors.ParserError as e:
     print("Error parsing CSV file:", e)
 

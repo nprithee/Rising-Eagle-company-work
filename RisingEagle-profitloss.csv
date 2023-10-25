@@ -1,4 +1,4 @@
-Date,Catagory,Subcatagory,Amount
+﻿Date,Catagory,Subcatagory,Amount
 Apr-23,Income,Plumbing,"75,456.00"
 Apr-23,Income,Sales,"63,579.91"
 Apr-23,COGS,Materials,0
@@ -44,9 +44,6 @@ Apr-23,Expenses,Meals and Entertainment,40.87
 Apr-23,Expenses,Miscellaneous Expense,2.39
 Apr-23,Expenses,License and Permits,469.25
 Apr-23,Expenses,Rent Expense,"3,720.45"
-Apr-23,Expenses,Interest Expense,469.19
-Apr-23,Expenses,Depreciation Expense,"6,450.00"
-Apr-23,Expenses,Amortization Expense,114
 May-23,Income,Plumbing,"6,055.55"
 May-23,Income,Sales,"193,784.22"
 May-23,Income,Other Income,"1,354.94"
@@ -99,10 +96,6 @@ May-23,Expenses,Dues & Subscriptions,161.00
 May-23,Expenses,Miscellaneous Expense,0.00
 May-23,Expenses,License and Permits,0.00
 May-23,Expenses,Rent Expense,"3,720.45"
-May-23,Expenses,Interest Expense,446.64
-May-23,Expenses,Depreciation Expense,"7,446.00"
-May-23,Expenses,Amortization Expense,114.00
-May-23,Expenses,Taxes,257.07
 Jun-23,Income,Plumbing,"173,567.50"
 Jun-23,Income,Sales,"138,474.74"
 Jun-23,COGS,Materials,0.00
@@ -119,13 +112,13 @@ Jun-23,COGS,"Doors, Windows & Treatments",517.58
 Jun-23,COGS,Electrical & Lighting,731.27
 Jun-23,COGS,Flooring,"7,761.35"
 Jun-23,COGS,Kitchen & Kitchenware,243.80
-Jun-23,COGS,Plumbing,"2,716.69"
-Jun-23,COGS,Waste Removal,737.60
-Jun-23,COGS,Small Tool / Equip. Replacement,333.14
-Jun-23,COGS,Subcontractors,"26,240.94"
+Jun-23,COGS,Plumbing,"2,602.64"
+Jun-23,COGS,Waste Removal,679.50
+Jun-23,COGS,Small Tool / Equip. Replacement,405.76
+Jun-23,COGS,Subcontractors,"145,156.94"
 Jun-23,COGS,Subcont. Temporary Laborers,600.00
-Jun-23,COGS,Referral Fees & Expense,"-5,415.27"
-Jun-23,COGS,Vehicle Expense,"1,185.63"
+Jun-23,COGS,Referral Fees & Expense,380.02
+Jun-23,COGS,Vehicle Expense,"1,260.63"
 Jun-23,COGS,Highway Toll Fees,0.00
 Jun-23,COGS,Parking Tickets & Fines,0.00
 Jun-23,COGS,Equipment Main. and Repair,0.00
@@ -137,15 +130,16 @@ Jun-23,Expenses,Payroll Taxes,"2,289.14"
 Jun-23,Expenses,Payroll Service Fees,262.40
 Jun-23,Expenses,Education & Training,29.95
 Jun-23,Expenses,Uniform,-240.32
-Jun-23,Expenses,Medical Insurance,"4,173.24"
+Jun-23,Expenses,Medical Insurance,"4,283.24"
 Jun-23,Expenses,Telephone & Internet Expense,0.00
 Jun-23,Expenses,Cell Phones,120.00
-Jun-23,Expenses,Insurance Expense,0.00
-Jun-23,Expenses,Advertising and Marketing,"1,979.61"
+Jun-23,Expenses,Insurance Expense,"2,068.54"
+Jun-23,Expenses,Advertising and Marketing,"2,347.12"
 Jun-23,Expenses,Lead Generators,299.00
 Jun-23,Expenses,Office Supplies,186.53
-Jun-23,Expenses,Computer Software,986.79
-Jun-23,Expenses,Building & Shop Expense,340.84
+Jun-23,Expenses,Computer Software,"1,300.89"
+Jun-23,Expenses,Shipping & Delivery,74.17
+Jun-23,Expenses,Building & Shop Expense,"1,994.39"
 Jun-23,Expenses,Utilities Expense,245.11
 Jun-23,Expenses,Vehicle Expense,300.00
 Jun-23,Expenses,Professional Fees,"3,209.00"
@@ -153,15 +147,10 @@ Jun-23,Expenses,Bank/Credit Card/Merchant Fees,39.61
 Jun-23,Expenses,Conferences & Travel,0.00
 Jun-23,Expenses,Parking and Toll Fees,0.00
 Jun-23,Expenses,Meals and Entertainment,0.00
-Jun-23,Expenses,Dues & Subscriptions,0.00
+Jun-23,Expenses,Dues & Subscriptions,450.00
 Jun-23,Expenses,Miscellaneous Expense,0.00
 Jun-23,Expenses,License and Permits,0.00
-Jun-23,Expenses,Rent Expense,779.02
-Jun-23,Expenses,Interest Expense,453.72
-Jun-23,Expenses,Other Expenses,"6,146.00"
-Jun-23,Expenses,Depreciation Expense,0.00
-Jun-23,Expenses,Amortization Expense,0.00
-Jun-23,Expenses,Taxes,0.00
+Jun-23,Expenses,Rent Expense,"3,720.45"
 Jan-23,Income,Plumbing,185.00
 Jan-23,Income,Sales,"57,294.30"
 Jan-23,COGS,Materials,"8,093.05"
@@ -212,11 +201,6 @@ Jan-23,Expenses,Meals and Entertainment,84
 Jan-23,Expenses,Miscellaneous Expense,0
 Jan-23,Expenses,License and Permits,"1,411.39"
 Jan-23,Expenses,Rent Expense,"3,664.80"
-Jan-23,Expenses,Interest Expense,780.9
-Jan-23,Expenses,Depreciation Expense,"5,785.00"
-Jan-23,Expenses,Amortization Expense,114
-Jan-23,Expenses,Taxes,468.71
-Jan-23,Expenses,Other Expenses,"3,883.93"
 Feb-23,Income,Plumbing,0.00
 Feb-23,Income,Sales,"242,107.72"
 Feb-23,Income,Other Income,"2,265.93"
@@ -276,10 +260,6 @@ Feb-23,Expenses,Dues & Subscriptions,0.00
 Feb-23,Expenses,Miscellaneous Expense,0.00
 Feb-23,Expenses,License and Permits,713.58
 Feb-23,Expenses,Rent Expense,"3,664.80"
-Feb-23,Expenses,Interest Expense,711.46
-Feb-23,Expenses,Depreciation Expense,"6,407.00"
-Feb-23,Expenses,Amortization Expense,114.00
-Feb-23,Expenses,Taxes,
 Mar-23,Income,Plumbing,"5,385.00"
 Mar-23,Income,Sales,"150,877.75"
 Mar-23,COGS,Materials,400.65
@@ -339,8 +319,117 @@ Mar-23,Expenses,Dues & Subscriptions,0.00
 Mar-23,Expenses,Miscellaneous Expense,0.07
 Mar-23,Expenses,License and Permits,"1,705.50"
 Mar-23,Expenses,Rent Expense,"3,720.45"
-Mar-23,Expenses,Interest Expense,614.04
-Mar-23,Expenses,Other Expenses,0.00
-Mar-23,Expenses,Depreciation Expense,"6,872.00"
-Mar-23,Expenses,Amortization Expense,114.00
-Mar-23,Expenses,Taxes,"2,317.85"
+Jul-23,Income,Plumbing,"6,359.13"
+Jul-23,Income,Subcontract - Asbestos,"21,235.45"
+Jul-23,Income,Sales,"254,441.85"
+Jul-23,COGS,Materials,0.00
+Jul-23,COGS,"Sponges,Rags,Tape, etc",19.42
+Jul-23,COGS,Vehicle Fuel,948.62
+Jul-23,COGS,Payroll Taxes (COGS),"2,607.55"
+Jul-23,COGS,Labor,"34,770.96"
+Jul-23,COGS,Bene/WC -Prod - Medical Ins,"-3,007.56"
+Jul-23,COGS,Bene/WC -Prod - Aflac Ins,-455.70
+Jul-23,COGS,Appliances,0.00
+Jul-23,COGS,Building Materials/Hardware/Paint,"5,490.93"
+Jul-23,COGS,Bath,0.00
+Jul-23,COGS,"Doors, Windows & Treatments","7,507.87"
+Jul-23,COGS,Electrical & Lighting,"1,183.45"
+Jul-23,COGS,Flooring,"46,609.84"
+Jul-23,COGS,Kitchen & Kitchenware,389.36
+Jul-23,COGS,Plumbing,"7,646.67"
+Jul-23,COGS,Waste Removal,393.00
+Jul-23,COGS,Small Tool / Equip. Replacement,457.18
+Jul-23,COGS,Subcontractors - Plumbing,"204,986.22"
+Jul-23,COGS,Subcont. Temporary Laborers,0.00
+Jul-23,COGS,Referral Fees & Expense,0.00
+Jul-23,COGS,Vehicle Expense,0.00
+Jul-23,COGS,Highway Toll Fees,315.00
+Jul-23,COGS,Parking Tickets & Fines,0.00
+Jul-23,COGS,Equipment Main. and Repair,0.00
+Jul-23,Expenses,Salary Officers,"4,000.00"
+Jul-23,Expenses,Salaries - Administration,"6,360.00"
+Jul-23,Expenses,Salaries - Project Managers,"20,189.16"
+Jul-23,Expenses,Commissions & Bonuses,"1,052.94"
+Jul-23,Expenses,Payroll Taxes,"2,226.33"
+Jul-23,Expenses,Payroll Service Fees,256.70
+Jul-23,Expenses,Education & Training,29.95
+Jul-23,Expenses,Uniform,-216.00
+Jul-23,Expenses,Medical Insurance,"4,283.24"
+Jul-23,Expenses,Telephone & Internet Expense,899.72
+Jul-23,Expenses,Cell Phones,120.00
+Jul-23,Expenses,Insurance Expense,"2,823.82"
+Jul-23,Expenses,Advertising and Marketing,"1,956.43"
+Jul-23,Expenses,Lead Generators,299.00
+Jul-23,Expenses,Office Supplies,66.77
+Jul-23,Expenses,Computer Software,"1,226.82"
+Jul-23,Expenses,Shipping & Delivery,10.06
+Jul-23,Expenses,Building & Shop Expense,828.30
+Jul-23,Expenses,Utilities Expense,236.68
+Jul-23,Expenses,Vehicle Expense,300.00
+Jul-23,Expenses,Professional Fees,"2,585.00"
+Jul-23,Expenses,Bank/Credit Card/Merchant Fees,454.65
+Jul-23,Expenses,Conferences & Travel,0.00
+Jul-23,Expenses,Parking and Toll Fees,0.00
+Jul-23,Expenses,Meals and Entertainment,0.00
+Jul-23,Expenses,Dues & Subscriptions,359.00
+Jul-23,Expenses,Miscellaneous Expense,0.00
+Jul-23,Expenses,License and Permits,0.00
+Jul-23,Expenses,Rent Expense,"4,499.47"
+Aug-23,Income,Plumbing,"8,312.20"
+Aug-23,Income,Other ,9.74
+Aug-23,Income,Sales,"244,270.31"
+Aug-23,COGS,Cleaning Chemicals,839.78
+Aug-23,COGS,Materials,0.00
+Aug-23,COGS,"Sponges,Rags,Tape, etc",0.00
+Aug-23,COGS,Vehicle Fuel,"1,570.56"
+Aug-23,COGS,Payroll Taxes (COGS),"2,958.98"
+Aug-23,COGS,Labor,"39,066.50"
+Aug-23,COGS,Bene/WC -Prod - Medical Ins,"-3,007.56"
+Aug-23,COGS,Bene/WC -Prod - Aflac Ins,-455.70
+Aug-23,COGS,Appliances,0.00
+Aug-23,COGS,Building Materials/Hardware/Paint,"6,080.96"
+Aug-23,COGS,Bath,"1,176.62"
+Aug-23,COGS,"Doors, Windows & Treatments",777.54
+Aug-23,COGS,Electrical & Lighting,"1,954.30"
+Aug-23,COGS,Flooring,"9,344.69"
+Aug-23,COGS,Kitchen & Kitchenware,"4,921.49"
+Aug-23,COGS,Plumbing,775.65
+Aug-23,COGS,Waste Removal,351.45
+Aug-23,COGS,Equipment Main. and Repair,37.85
+Aug-23,COGS,Small Tool / Equip. Replacement,"3,896.89"
+Aug-23,COGS,Subcontractors,"68,026.17"
+Aug-23,COGS,Subcont. Temporary Laborers,0.00
+Aug-23,COGS,Referral Fees & Expense,0.00
+Aug-23,COGS,Vehicle Expense,"1,147.26"
+Aug-23,COGS,Highway Toll Fees,630.00
+Aug-23,COGS,Parking Tickets & Fines,0.00
+Aug-23,COGS,Equipment Main. and Repair,0.00
+Aug-23,Expenses,Salary Officers,"4,000.00"
+Aug-23,Expenses,Salaries - Administration,"6,927.00"
+Aug-23,Expenses,Salaries - Project Managers,"20,280.16"
+Aug-23,Expenses,Commissions & Bonuses,820.99
+Aug-23,Expenses,Payroll Taxes,"2,258.90"
+Aug-23,Expenses,Payroll Service Fees,303.90
+Aug-23,Expenses,Education & Training,29.95
+Aug-23,Expenses,Uniform,-225.30
+Aug-23,Expenses,Medical Insurance,"4,283.24"
+Aug-23,Expenses,Telephone & Internet Expense,0.00
+Aug-23,Expenses,Cell Phones,120.00
+Aug-23,Expenses,Insurance Expense,"2,823.82"
+Aug-23,Expenses,Advertising and Marketing,"4,930.85"
+Aug-23,Expenses,Lead Generators,299.00
+Aug-23,Expenses,Office Supplies,235.89
+Aug-23,Expenses,Computer Software,877.87
+Aug-23,Expenses,Shipping & Delivery,0.00
+Aug-23,Expenses,Building & Shop Expense,"1,743.79"
+Aug-23,Expenses,Utilities Expense,302.79
+Aug-23,Expenses,Vehicle Expense,300.00
+Aug-23,Expenses,Professional Fees,"1,198.00"
+Aug-23,Expenses,Bank/Credit Card/Merchant Fees,267.83
+Aug-23,Expenses,Conferences & Travel,0.00
+Aug-23,Expenses,Parking and Toll Fees,31.06
+Aug-23,Expenses,Meals and Entertainment,461.26
+Aug-23,Expenses,Dues & Subscriptions,0.00
+Aug-23,Expenses,Miscellaneous Expense,0.00
+Aug-23,Expenses,License and Permits,0.00
+Aug-23,Expenses,Rent Expense,"3,807.59"
