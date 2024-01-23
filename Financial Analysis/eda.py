@@ -5,7 +5,7 @@ import seaborn as sns
 
 # Load your financial data (replace 'data.csv' with your data file)
 try:
-    df = pd.read_csv(r'C:\Users\nprit\Documents\Rising-Eagle-company-work\RisingEagle-profitloss.csv')
+    df = pd.read_csv(r'C:/Users/nprit\Documents/Rising-Eagle-company-work/Financial Analysis/RisingEagle-profitloss.csv')
 except pd.errors.ParserError as e:
     print("Error parsing CSV file:", e)
 
@@ -39,8 +39,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# Group the data by month
-monthly_df = df.groupby(df['Date'].dt.to_period('M'))
+
 
 #%%
 # Function to calculate total income, total cogs, total expenses, and total costing for each month
@@ -90,3 +89,5 @@ ax.legend()
 
 plt.show()
 
+
+# %%
