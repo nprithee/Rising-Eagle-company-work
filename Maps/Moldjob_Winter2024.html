@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c0f7accef2ae5a42fbd6e230eeaac734 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c0f7accef2ae5a42fbd6e230eeaac734" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c0f7accef2ae5a42fbd6e230eeaac734 = L.map(
+                "map_c0f7accef2ae5a42fbd6e230eeaac734",
+                {
+                    center: [38.9072, -77.0369],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9ee272e6da569208ae9949315e014ae8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_9ee272e6da569208ae9949315e014ae8.addTo(map_c0f7accef2ae5a42fbd6e230eeaac734);
+        
+    
+            var marker_cluster_527f457759657642091f050404517cf5 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_9d232ba92dda80de44f39345b6b71e52 = L.marker(
+                [38.7233263, -77.5365669],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_9e2026894fc152cc6a4940d364acf0f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b134a2be111d3975467dd3e79c3a7e1a = $(`<div id="html_b134a2be111d3975467dd3e79c3a7e1a" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5414-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_9e2026894fc152cc6a4940d364acf0f4.setContent(html_b134a2be111d3975467dd3e79c3a7e1a);
+            
+        
+
+        marker_9d232ba92dda80de44f39345b6b71e52.bindPopup(popup_9e2026894fc152cc6a4940d364acf0f4)
+        ;
+
+        
+    
+    
+            var marker_3798acaaba27f30938b9b4158c48f85e = L.marker(
+                [38.8769326, -77.0893094],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_fbdc26237bd880b4b0652559da422371 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_229302d6d4bace32f0a7f5ad3a056f8c = $(`<div id="html_229302d6d4bace32f0a7f5ad3a056f8c" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5411-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_fbdc26237bd880b4b0652559da422371.setContent(html_229302d6d4bace32f0a7f5ad3a056f8c);
+            
+        
+
+        marker_3798acaaba27f30938b9b4158c48f85e.bindPopup(popup_fbdc26237bd880b4b0652559da422371)
+        ;
+
+        
+    
+    
+            var marker_847e9aa0669aa8c08f926fd29e131edf = L.marker(
+                [38.838491000000005, -77.20852375508332],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_17c7f15ace176df6a4e8f86c13781369 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a00a106fc308cb565092ed74db955800 = $(`<div id="html_a00a106fc308cb565092ed74db955800" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5407-M<br><b>Property Type:</b> Townhouse<br><b>Property Type:</b> $1,379.24 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_17c7f15ace176df6a4e8f86c13781369.setContent(html_a00a106fc308cb565092ed74db955800);
+            
+        
+
+        marker_847e9aa0669aa8c08f926fd29e131edf.bindPopup(popup_17c7f15ace176df6a4e8f86c13781369)
+        ;
+
+        
+    
+    
+            var marker_fc43e9aa0e894a78933c9b84b3b4d66e = L.marker(
+                [38.6924475, -77.57688678066663],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_079285fef79fba28b49b8087a7a8ab22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fde9812aa7b61f5dca8654e2dfda8aa3 = $(`<div id="html_fde9812aa7b61f5dca8654e2dfda8aa3" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5396-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_079285fef79fba28b49b8087a7a8ab22.setContent(html_fde9812aa7b61f5dca8654e2dfda8aa3);
+            
+        
+
+        marker_fc43e9aa0e894a78933c9b84b3b4d66e.bindPopup(popup_079285fef79fba28b49b8087a7a8ab22)
+        ;
+
+        
+    
+    
+            var marker_16228b0632e223b1a9d1b718de83c50b = L.marker(
+                [38.8121398, -77.6368038],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_338f1c12669f710fd5d4415b4373f902 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8de8288c835b319ad0295df679ca9c7e = $(`<div id="html_8de8288c835b319ad0295df679ca9c7e" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5394-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_338f1c12669f710fd5d4415b4373f902.setContent(html_8de8288c835b319ad0295df679ca9c7e);
+            
+        
+
+        marker_16228b0632e223b1a9d1b718de83c50b.bindPopup(popup_338f1c12669f710fd5d4415b4373f902)
+        ;
+
+        
+    
+    
+            var marker_aa1b59c71dfab5474bf715ae34c16dfa = L.marker(
+                [39.181334, -77.266647],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_152bd4ab203d67afd132b7833eaf05dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f415541f458a08a82e724c286347703 = $(`<div id="html_7f415541f458a08a82e724c286347703" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5391-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_152bd4ab203d67afd132b7833eaf05dc.setContent(html_7f415541f458a08a82e724c286347703);
+            
+        
+
+        marker_aa1b59c71dfab5474bf715ae34c16dfa.bindPopup(popup_152bd4ab203d67afd132b7833eaf05dc)
+        ;
+
+        
+    
+    
+            var marker_443e3c569fd43d2a24d529f4ebfe0486 = L.marker(
+                [38.6581723, -77.2497049],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_9200eb40d81a6ce733e37dad1da6848f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a12e78a13cff32368bef2488b8754b4 = $(`<div id="html_3a12e78a13cff32368bef2488b8754b4" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5380-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> $33,448.46 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_9200eb40d81a6ce733e37dad1da6848f.setContent(html_3a12e78a13cff32368bef2488b8754b4);
+            
+        
+
+        marker_443e3c569fd43d2a24d529f4ebfe0486.bindPopup(popup_9200eb40d81a6ce733e37dad1da6848f)
+        ;
+
+        
+    
+    
+            var marker_9f03f552c836e3302680d08d8815a851 = L.marker(
+                [38.9942121, -77.0771572],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_91872dbdec9eec67b32e9d502bf9d983 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_86ca176ee1f805aebc18d18869dbe093 = $(`<div id="html_86ca176ee1f805aebc18d18869dbe093" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5378-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> $9,318.33 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_91872dbdec9eec67b32e9d502bf9d983.setContent(html_86ca176ee1f805aebc18d18869dbe093);
+            
+        
+
+        marker_9f03f552c836e3302680d08d8815a851.bindPopup(popup_91872dbdec9eec67b32e9d502bf9d983)
+        ;
+
+        
+    
+    
+            var marker_b4621ee626f80b0debb30ffb18be2bfb = L.marker(
+                [38.738019, -77.00207559994112],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_fe1a1f9f84381e8d53c9e59be9cc75da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62efaeb9745666b809bc8a54012f0e0b = $(`<div id="html_62efaeb9745666b809bc8a54012f0e0b" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5374-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_fe1a1f9f84381e8d53c9e59be9cc75da.setContent(html_62efaeb9745666b809bc8a54012f0e0b);
+            
+        
+
+        marker_b4621ee626f80b0debb30ffb18be2bfb.bindPopup(popup_fe1a1f9f84381e8d53c9e59be9cc75da)
+        ;
+
+        
+    
+    
+            var marker_b3c39af67d1486d3b1ab009eb269ab41 = L.marker(
+                [38.8810678, -77.3008453],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_b7ed77a170681aa94aafb62ffdd6f57c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5710ec7c2cddd4e682421a5c67eedb9c = $(`<div id="html_5710ec7c2cddd4e682421a5c67eedb9c" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5371-M<br><b>Property Type:</b> Condo<br><b>Property Type:</b> $10,353.44 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_b7ed77a170681aa94aafb62ffdd6f57c.setContent(html_5710ec7c2cddd4e682421a5c67eedb9c);
+            
+        
+
+        marker_b3c39af67d1486d3b1ab009eb269ab41.bindPopup(popup_b7ed77a170681aa94aafb62ffdd6f57c)
+        ;
+
+        
+    
+    
+            var marker_3dbf0ae6812adc734cacca817fc53b37 = L.marker(
+                [38.953055899999995, -77.35021396591173],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_7a8eecc5acf71e05b1fff40687ddc021 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b72c10b51ee639b54b6dd5758ecd58b = $(`<div id="html_5b72c10b51ee639b54b6dd5758ecd58b" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5369-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> nan<br><b>Call Date:</b> 2024</div>`)[0];
+                popup_7a8eecc5acf71e05b1fff40687ddc021.setContent(html_5b72c10b51ee639b54b6dd5758ecd58b);
+            
+        
+
+        marker_3dbf0ae6812adc734cacca817fc53b37.bindPopup(popup_7a8eecc5acf71e05b1fff40687ddc021)
+        ;
+
+        
+    
+    
+            var marker_a041c478afda08a2a69eaa01e6805ee1 = L.marker(
+                [38.8769326, -77.0893094],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_6b91ce08694c0f900708f4a152798968 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e04f156cc86568b754d771ba39bc0db = $(`<div id="html_7e04f156cc86568b754d771ba39bc0db" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5367-M<br><b>Property Type:</b> Condo<br><b>Property Type:</b> $2,352.64 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_6b91ce08694c0f900708f4a152798968.setContent(html_7e04f156cc86568b754d771ba39bc0db);
+            
+        
+
+        marker_a041c478afda08a2a69eaa01e6805ee1.bindPopup(popup_6b91ce08694c0f900708f4a152798968)
+        ;
+
+        
+    
+    
+            var marker_870441fa48e2ddb1aa50ccbde10fd2e0 = L.marker(
+                [38.6581723, -77.2497049],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_fade590d9a0647fc3fb58ab89abecda9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f85dd585d0d2041913a4225435d9a94 = $(`<div id="html_3f85dd585d0d2041913a4225435d9a94" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5349-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> $250.00 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_fade590d9a0647fc3fb58ab89abecda9.setContent(html_3f85dd585d0d2041913a4225435d9a94);
+            
+        
+
+        marker_870441fa48e2ddb1aa50ccbde10fd2e0.bindPopup(popup_fade590d9a0647fc3fb58ab89abecda9)
+        ;
+
+        
+    
+    
+            var marker_d61c4a7590f4139ea1be9a88cc1ee7a1 = L.marker(
+                [38.93668525, -77.1858267942485],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_d2ca891a6506a5e7c987dbfba5f31b7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59344afdc37e9f814e38a85d3eb2fa4d = $(`<div id="html_59344afdc37e9f814e38a85d3eb2fa4d" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5346-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> $2,180.38 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_d2ca891a6506a5e7c987dbfba5f31b7b.setContent(html_59344afdc37e9f814e38a85d3eb2fa4d);
+            
+        
+
+        marker_d61c4a7590f4139ea1be9a88cc1ee7a1.bindPopup(popup_d2ca891a6506a5e7c987dbfba5f31b7b)
+        ;
+
+        
+    
+    
+            var marker_de51687345b99eb03f619fc4fc356790 = L.marker(
+                [38.9942121, -77.0771572],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_3af47e3066e9de37e5010c13a1ac8570 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ea267e140e5f8ee4f34657b50326ff1 = $(`<div id="html_3ea267e140e5f8ee4f34657b50326ff1" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5343-M<br><b>Property Type:</b> Townhouse<br><b>Property Type:</b> $11,092.78 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_3af47e3066e9de37e5010c13a1ac8570.setContent(html_3ea267e140e5f8ee4f34657b50326ff1);
+            
+        
+
+        marker_de51687345b99eb03f619fc4fc356790.bindPopup(popup_3af47e3066e9de37e5010c13a1ac8570)
+        ;
+
+        
+    
+    
+            var marker_cc6ee9aad60a9feec8f9cc1d4a158220 = L.marker(
+                [38.8156356, -77.2836849],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_dd6009a010c8dffade4f890edf750650 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b6e895f637caea9a551acc4be24e248 = $(`<div id="html_5b6e895f637caea9a551acc4be24e248" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 24-5340-M<br><b>Property Type:</b> Single Family<br><b>Property Type:</b> $670.00 <br><b>Call Date:</b> 2024</div>`)[0];
+                popup_dd6009a010c8dffade4f890edf750650.setContent(html_5b6e895f637caea9a551acc4be24e248);
+            
+        
+
+        marker_cc6ee9aad60a9feec8f9cc1d4a158220.bindPopup(popup_dd6009a010c8dffade4f890edf750650)
+        ;
+
+        
+    
+    
+            var marker_f4a54682392a5801ec59fd62f81368ab = L.marker(
+                [38.8769326, -77.0893094],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_3f4a64bf6b5e14a1ed41ccf9781f064b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d21bac301e4c239e7fbf233832ebb3b4 = $(`<div id="html_d21bac301e4c239e7fbf233832ebb3b4" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 23-5247-M<br><b>Property Type:</b> Townhouse<br><b>Property Type:</b> $4,139.98 <br><b>Call Date:</b> 2023</div>`)[0];
+                popup_3f4a64bf6b5e14a1ed41ccf9781f064b.setContent(html_d21bac301e4c239e7fbf233832ebb3b4);
+            
+        
+
+        marker_f4a54682392a5801ec59fd62f81368ab.bindPopup(popup_3f4a64bf6b5e14a1ed41ccf9781f064b)
+        ;
+
+        
+    
+    
+            var marker_b614e6a42ad4544b5aad3cbde4c74268 = L.marker(
+                [38.8156356, -77.2836849],
+                {}
+            ).addTo(marker_cluster_527f457759657642091f050404517cf5);
+        
+    
+        var popup_0b5b677d2e898671f53bde22c0288b02 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79c7d7913b4b3f3b9fc6010202ad369c = $(`<div id="html_79c7d7913b4b3f3b9fc6010202ad369c" style="width: 100.0%; height: 100.0%;"><b>Job Number:</b> 23-5223-M<br><b>Property Type:</b> Townhouse<br><b>Property Type:</b> $4,763.98 <br><b>Call Date:</b> 2023</div>`)[0];
+                popup_0b5b677d2e898671f53bde22c0288b02.setContent(html_79c7d7913b4b3f3b9fc6010202ad369c);
+            
+        
+
+        marker_b614e6a42ad4544b5aad3cbde4c74268.bindPopup(popup_0b5b677d2e898671f53bde22c0288b02)
+        ;
+
+        
+    
+    
+            marker_cluster_527f457759657642091f050404517cf5.addTo(map_c0f7accef2ae5a42fbd6e230eeaac734);
+        
+</script>
+</html>
