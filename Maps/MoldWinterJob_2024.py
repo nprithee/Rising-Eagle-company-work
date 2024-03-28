@@ -1,4 +1,6 @@
 
+
+
 #%%
 import pandas as pd
 import folium
@@ -8,7 +10,7 @@ from geopy.exc import GeocoderTimedOut
 import time
 
 # Replace the link with the raw GitHub link to your CSV file
-github_link = "https://raw.githubusercontent.com/nprithee/Rising-Eagle-company-work/main/Map_data/Water_winter_2024.csv"
+github_link = "https://raw.githubusercontent.com/nprithee/Rising-Eagle-company-work/main/Map_data/Mold_Winter_2024.csv"
 
 # Read the data into a DataFrame
 try:
@@ -61,5 +63,5 @@ for _, row in df.iterrows():
         folium.Marker(location=[lat, lon], popup=popup_html).add_to(marker_cluster)
 
 # Save map to HTML
-m.save("waterjob_Winter2024.html")
+m.save("Moldjob_Winter2024.html")
 # %%
