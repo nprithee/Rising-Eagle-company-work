@@ -78,5 +78,4 @@ for _, row in df.iterrows():
 m.save("moldjob_map2017to2024.html")
 
 
-
 # %%
