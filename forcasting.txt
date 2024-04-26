@@ -1,0 +1,93 @@
+
+#%%
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from itertools import product
+
+# Load the dataset
+# Assuming the dataset is in a CSV file named 'waterjob2017to2023.csv'
+df = pd.read_csv('C:/Users/nprit/Documents/Rising-Eagle-company-work/Map_data/waterjob2017to2023.csv')
+
+print(df.head)
+
+# %%
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from itertools import product
+
+# Load the dataset
+df = pd.read_csv('C:/Users/nprit/Documents/Rising-Eagle-company-work/Map_data/waterjob2017to2023.csv')
+
+# Convert 'Call Date' to datetime format
+df['Call Date'] = pd.to_datetime(df['Call Date'])
+
+# Extract season from 'Call Date'
+def get_season(month):
+    if month in [12, 1, 2]:
+        return 'Winter'
+    elif month in [3, 4, 5]:
+        return 'Spring'
+    elif month in [6, 7, 8]:
+        return 'Summer'
+    else:
+        return 'Fall'
+
+df['Season'] = df['Call Date'].dt.month.apply(get_season)
+
+# Group data by season and year, and count the number of jobs
+seasonal_job_counts = df.groupby(['Season', df['Call Date'].dt.year]).size().unstack(fill_value=0)
+
+# Forecasting function
+def sarima_forecast(data, seasonal_order=(0,0,0,0), order=(1,1,1)):
+    model = SARIMAX(data, order=order, seasonal_order=seasonal_order, enforce_stationarity=False, enforce_invertibility=False)
+    model_fit = model.fit(disp=False)
+    forecast = model_fit.forecast(steps=1)  # Forecast for the next year
+    return forecast
+
+# Forecast for each season
+forecasted_seasons = {}
+for season in seasonal_job_counts.index:
+    data = seasonal_job_counts.loc[season]
+    forecast = sarima_forecast(data, seasonal_order=(1, 0, 0, 12), order=(1, 1, 1))
+    forecasted_seasons[season] = forecast[0]
+
+# Calculate percentage change
+percentage_change = seasonal_job_counts.pct_change(axis=1) * 100
+
+# Plotting
+plt.figure(figsize=(12, 8))
+
+# Plot actual job counts
+for season in seasonal_job_counts.index:
+    plt.plot(seasonal_job_counts.columns, seasonal_job_counts.loc[season], label=season)
+
+# Plot forecasted job counts
+for season in forecasted_seasons:
+    plt.scatter(seasonal_job_counts.columns[-1] + 1, forecasted_seasons[season], color='red', label=f'{season} Forecast')
+
+plt.title('Job Counts by Season')
+plt.xlabel('Year')
+plt.ylabel('Job Count')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Plot percentage change
+plt.figure(figsize=(12, 8))
+
+for season in percentage_change.index:
+    plt.plot(percentage_change.columns[1:], percentage_change.loc[season][1:], label=season)
+
+plt.title('Percentage Change in Job Counts by Season')
+plt.xlabel('Year')
+plt.ylabel('Percentage Change')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# %%
